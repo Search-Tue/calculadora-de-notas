@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon-removebg-preview.png">
+    <title>Calculadora de notas</title>
+</head>
+<body>
+
+
+         <h1>Sistema de Notas</h1>
+
+    <div class="spacemore"></div>
+
+    <form>
+        <label for="nota1">Nota 1:</label>
+        <input id="nota1" type="number" placeholder="Digite a nota 1"><br>
+
+        <div class="space"></div>
+
+        <label for="nota2">Nota 2:</label>
+        <input id="nota2" type="number" placeholder="Digite a nota 2"><br>
+
+        <div class="space"></div>
+
+        <label for="nota3">Nota 3:</label>
+        <input id="nota3" type="number" placeholder="Digite a nota 3"><br>
+
+        <div class="space"></div>
+
+        <label for="nota4">Nota 4:</label>
+        <input id="nota4" type="number" placeholder="Digite a nota 4"><br>
+
+        <div class="space"></div>
+
+        <label for="nota5">Nota 5:</label>
+        <input id="nota5" type="number" placeholder="Digite a nota 5">
+        <br>
+        <br>
+
+        <button type="button" onclick="Aritmetica()">Média Aritmética</button>
+        <button type="button" onclick="Ponderada()">Média Ponderada</button>
+    </form>
+
+    <br>
+    <br>
+
+
+    <div id="expor"></div>
+
+    <script>
+        var expor = document.getElementById("expor")
+
+        function Aritmetica() {
+            var nota1 = parseFloat(document.getElementById("nota1").value);
+            var nota2 = parseFloat(document.getElementById("nota2").value);
+            var nota3 = parseFloat(document.getElementById("nota3").value);
+            var nota4 = parseFloat(document.getElementById("nota4").value);
+            var nota5 = parseFloat(document.getElementById("nota5").value);
+
+            var media = (nota1 + nota2 + nota3 + nota4 + nota5) / 5;
+
+            if (media >= 7) {
+                resultado = "Aprovado!";
+            } else if (media >= 5) {
+                resultado = "Ficou de exame!";
+            } else {
+                resultado = "Reprovado!";
+            }
+
+            expor.innerHTML = "Resultado: " + resultado + "\nMédia: " + media 
+        }
+
+        function Ponderada() {
+            var nota1 = parseFloat(document.getElementById("nota1").value);
+            var nota2 = parseFloat(document.getElementById("nota2").value);
+            var nota3 = parseFloat(document.getElementById("nota3").value);
+            var nota4 = parseFloat(document.getElementById("nota4").value);
+            var nota5 = parseFloat(document.getElementById("nota5").value);
+
+            var peso1 = parseFloat(prompt("Digite o peso para a nota 1:"));
+            var peso2 = parseFloat(prompt("Digite o peso para a nota 2:"));
+            var peso3 = parseFloat(prompt("Digite o peso para a nota 3:"));
+            var peso4 = parseFloat(prompt("Digite o peso para a nota 4:"));
+            var peso5 = parseFloat(prompt("Digite o peso para a nota 5:"));
+
+            var media = (nota1 * peso1 + nota2 * peso2 + nota3 * peso3 + nota4 * peso4 + nota5 * peso5) / (peso1 + peso2 + peso3 + peso4 + peso5);
+
+            if (media >= 7) {
+                resultado = "Aprovado!";
+            } else if (media >= 5) {
+                resultado = "Ficou de exame!";
+            } else {
+                resultado = "Reprovado!";
+            }
+
+            expor.innerHTML = "Resultado: " + resultado + "\nMédia: " + media 
+        }
+    </script>
+</body>
+</html>
+

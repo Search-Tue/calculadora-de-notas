@@ -1,0 +1,49 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'IBM Plex Mono', monospace;
+    color:  white;
+
+}
+
+body{
+    padding-top: 100px;
+    text-align: center;
+    background-color: rgb(214, 154, 172);
+}
+
+input{
+    color: white;
+    border-radius: 10px;
+    border: none;
+    outline: white;
+    background-color: rgb(214, 154, 172);
+}
+
+
+button{
+    padding: 4px;
+    background-color: rgb(214, 154, 172);
+    border-radius: 5px;
+    border: solid 2px white;
+    color: white;
+}
+
+button:hover{
+    background-color: white;
+    color: rgb(214, 154, 172);
+}
+
+.space{
+    padding: 10px;
+}
+
+.spacemore{
+    padding: 45px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
