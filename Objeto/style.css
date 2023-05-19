@@ -14,12 +14,24 @@ body{
 
 input{
     color: white;
-    border-radius: 10px;
-    border: none;
-    outline: white;
+    border-radius: 5px;
+    border: solid 1.5px white;
     background-color: rgb(214, 154, 172);
 }
 
+input::placeholder{
+    color: white;
+    text-align: center;
+}
+
+input:focus{
+    border: solid 1.5px white;
+    outline: none;
+}
+
+input::-moz-focus-inner{
+    border: none;
+}
 
 button{
     padding: 4px;
@@ -32,6 +44,7 @@ button{
 button:hover{
     background-color: white;
     color: rgb(214, 154, 172);
+    transition: 0.45s;
 }
 
 .space{
